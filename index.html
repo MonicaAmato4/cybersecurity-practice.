@@ -2,54 +2,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Bank Security Training</title>
-    <style>
-        body {
-            background: #eaf0f8;
-            font-family: Arial;
-            text-align: center;
-            padding: 30px;
-        }
-        .box {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            max-width: 350px;
-            margin: auto;
-        }
-        input, button {
-            padding: 12px;
-            width: 90%;
-            margin: 10px 0;
-        }
-        button {
-            background: #174b91;
-            color: white;
-            border: none;
-        }
-    </style>
+<title>Cybersecurity Training</title>
+<style>
+body {
+  font-family: Arial;
+  background: #eaf0f8;
+  text-align: center;
+  padding: 30px;
+}
+.box {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+}
+input, button {
+  padding: 12px;
+  margin: 10px;
+  width: 90%;
+}
+button {
+  background: #174b91;
+  color: white;
+  border: none;
+}
+</style>
 </head>
 <body>
+
 <div class="box">
-    <h2>Security Training Demo</h2>
-    <p>This is a practice password-reset page.</p>
-    <form id="demo">
-        <input type="email" placeholder="Test email" required>
-        <input type="password" placeholder="Test password" required>
-        <button type="submit">Continue</button>
-    </form>
-    <p id="message"></p>
+<h2>Cybersecurity Practice</h2>
+<p>Dummy credential training only</p>
+
+<form id="training">
+<input type="email" placeholder="Test email" required>
+<input type="password" id="testPassword"
+placeholder="Dummy password" required>
+<button type="submit">Submit Test</button>
+</form>
+
+<p id="result"></p>
 </div>
 
 <script>
-document.getElementById("demo").onsubmit = function(e) {
-    e.preventDefault();
-    document.getElementById("message").innerText =
-    "Training complete! Never enter passwords on suspicious links.";
-    this.reset();
+document.getElementById("training").onsubmit =
+function(event) {
+  event.preventDefault();
+  document.getElementById("result").innerText =
+  "Training completed! No password was saved or sent.";
+  this.reset();
 };
 </script>
+
 </body>
 </html>
-
-
