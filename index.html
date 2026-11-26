@@ -2,41 +2,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Cybersecurity Training</title>
+<title>Cybersecurity Training Lab</title>
 <style>
 body {
   font-family: Arial;
   background: #eaf0f8;
+  padding: 25px;
   text-align: center;
-  padding: 30px;
 }
 .box {
   background: white;
   padding: 25px;
   border-radius: 12px;
+  max-width: 350px;
+  margin: auto;
 }
 input, button {
+  box-sizing: border-box;
+  width: 100%;
   padding: 12px;
-  margin: 10px;
-  width: 90%;
+  margin: 10px 0;
 }
 button {
   background: #174b91;
   color: white;
   border: none;
+  border-radius: 6px;
 }
 </style>
 </head>
 <body>
-
 <div class="box">
-<h2>Cybersecurity Practice</h2>
-<p>Dummy credential training only</p>
+<h2>Cybersecurity Training Lab</h2>
+<p>Enter dummy information for this exercise.</p>
 
-<form id="training">
-<input type="email" placeholder="Test email" required>
-<input type="password" id="testPassword"
-placeholder="Dummy password" required>
+<form id="trainingForm">
+<input type="email" id="email"
+placeholder="Test email" required>
+
+<input type="text" id="testInfo"
+placeholder="Dummy test value" required>
+
 <button type="submit">Submit Test</button>
 </form>
 
@@ -44,14 +50,18 @@ placeholder="Dummy password" required>
 </div>
 
 <script>
-document.getElementById("training").onsubmit =
-function(event) {
+document.getElementById("trainingForm")
+.addEventListener("submit", function(event) {
   event.preventDefault();
-  document.getElementById("result").innerText =
-  "Training completed! No password was saved or sent.";
-  this.reset();
-};
-</script>
 
+  const email = document.getElementById("email").value;
+
+  document.getElementById("result").textContent =
+    "Training completed for " + email +
+    ". No password was collected.";
+
+  this.reset();
+});
+</script>
 </body>
 </html>
